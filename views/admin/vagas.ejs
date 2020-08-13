@@ -7,10 +7,12 @@
 <div>
     <ul>
         <% vagas.forEach(vaga => { %>
-            <li>
+            <li class="mb-2">
                 <%- vaga.titulo %> |
-                <a class="text-decoration-none text-reset" href="/admin/vagas/delete/<%- vaga.id %>">
+                <a class="btn btn-danger pt-0 pb-0" href="/admin/vagas/delete/<%- vaga.id %>">
                   Excluir  </a>
+                <a class="btn btn-warning pt-0 pb-0" href="/admin/vagas/editar/<%- vaga.id %>">
+                    Editar  </a>
             </li>
         <% }) %>
     </ul>

@@ -1,6 +1,6 @@
 <%- include ("header.ejs") %>
 <h2 class="p-2 border bg-dark text-white">
-    Admin vagas:
+    Editar vagas:
     <a href="/admin/vagas">Vaga</a>
 </h2>
 
@@ -9,15 +9,15 @@
     <form method="post">
         <div class="form-group col-5">
             <label for="">Titulo: </label>
-            <input class="form-control" type="text" name="titulo">
+            <input class="form-control" type="text" name="titulo" value="<%= vaga.titulo %>">
         </div>
         <div class="form-group col-5">
             <label for="">Descrição:</label>
-            <textarea class="form-control" name="descricao" id="" cols="30" rows="10"></textarea></div>
+            <textarea class="form-control" name="descricao" id="" cols="30" rows="10" ><%= vaga.descricao %></textarea></div>
         <div class="form-group col-5"><label for="">Categoria:</label>
-            <select class="form-control" name="categoria" id="">
+            <select class="form-control" name="categoria">
                 <% categorias.forEach(categoria => { %>
-                    <option value="<%= categoria.id%>"> <%= categoria.categoria%> </option>
+                    <option value="<%= categoria.id%>"  <% if(categoria.id == vaga.categoria) { %> selected <% } %>"><%= categoria.categoria%> </option>
                 <% }) %>
            </select>
             <br>
