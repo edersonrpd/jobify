@@ -1,0 +1,30 @@
+<%- include ("header.ejs") %>
+<h2 class="p-2 border bg-dark text-white">
+    Admin vagas:
+    <a href="/admin/vagas">Vaga</a>
+</h2>
+
+<div class="">
+
+    <form method="post">
+        <div class="form-group col-5">
+            <label for="">Titulo: </label>
+            <input class="form-control" type="text" name="titulo">
+        </div>
+        <div class="form-group col-5">
+            <label for="">Descrição:</label>
+            <textarea class="form-control" name="descricao" id="" cols="30" rows="10"></textarea></div>
+        <div class="form-group col-5"><label for="">Categoria:</label>
+            <select class="form-control" name="categoria" id="">
+                <% categorias.forEach(categoria => { %>
+                    <option value="<%= categoria.id%>"> <%= categoria.categoria%> </option>
+                <% }) %>
+           </select>
+            <br>
+        <button class="btn btn-dark">Salvar vaga</button>
+        </div>
+
+
+    </form>
+</div>
+<%- include ("footer.ejs") %>
